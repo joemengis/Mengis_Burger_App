@@ -13,10 +13,9 @@ app.use(bodyParser.json());
 app.engine("handlebars", handlebars({ defaultlayout: "main" }));
 app.set("view engine", "handlebars");
 
-// var apiRoutes = require("./controllers/api-routes")(app,express);
-// var htmlRoutes = require("./controllers/html-routes")(app,express);
-// app.use(apiRoutes);
-// app.use(htmlRoutes);
+const routes = require("./controllers/burger-controller");
+app.use(routes);
+
 
 app.listen(PORT, function() {
     console.log("Server is listening on: http://localhost:" + PORT);

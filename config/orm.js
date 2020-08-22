@@ -21,9 +21,10 @@ function translateSql(obj) {
     }
     return arr.toString();
 }
-const orm = {
+
+let orm = {
     selectAll: function(table, cb){
-        let dbQuery = "SELECT * FROM" + table = ";";
+        let dbQuery = "SELECT * FROM" + table + ";";
 
         connection.query(dbQuery, function(err, res){
             if(err) {
@@ -64,3 +65,5 @@ const orm = {
     }
 
 }; 
+
+module.exports = orm;
