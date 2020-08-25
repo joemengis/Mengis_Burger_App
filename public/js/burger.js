@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
 
     $(".create-form").on("submit", function(event) {
         event.preventDefault();
@@ -44,3 +44,4 @@ $(function() {
     
 
 });
+
