@@ -4,11 +4,13 @@ let burger = {
     selectAll: function(cb) {
         orm.selectAll("burgers", function(res) {
             cb(res);
+            console.log("Hello World!");
         });
     },
     insertOne: function(cols, vals, cb) {
         orm.selectAll("burgers", cols, vals, function(res) {
             cb(res);
+            console.log("insert one worked: ");
         });
     },
     updateOne: function(objColVals, condition, cb) {

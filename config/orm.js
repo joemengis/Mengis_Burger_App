@@ -1,4 +1,4 @@
-const connection = require("./connection");
+const connection = require("../config/connection");
 
 function createQmarks(num) {
     let arr = [];
@@ -22,7 +22,7 @@ function translateSql(obj) {
     return arr.toString();
 }
 
-let orm = {
+const orm = {
     selectAll: function(table, cb){
         let dbQuery = "SELECT * FROM " + table + ";";
 
@@ -33,7 +33,6 @@ let orm = {
             cb(res);
         })
     },
-
     insertOne: function(table, cols, vals, cb) {
         let dbQuery = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + createQmarks(vals.length) + ") ";
         console.log(dbQuery);
@@ -44,7 +43,6 @@ let orm = {
             cb(res);
         });
     },
-
     updateOne: function(table, objColVals, condition, cb) {
         let dbQuery = "UPDATE " + table + " SET " + translateSql(objColVals) + " WHERE " + condition;
         console.log(dbQuery);
@@ -55,7 +53,6 @@ let orm = {
             cb(res);
         });
     },
-    
     deleteOne: function(table, condition, cb) {
         let dbQuery = "DELETE FROM " + table + " WHERE " + condition;
         console.log(dbQuery);
