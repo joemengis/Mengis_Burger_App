@@ -1,8 +1,8 @@
 .jumbotron {
-  background-image: url("../img/burgerpic2.png");
+  background-image: url("../assets/FAVPNG_burger-cartoon_kKsbR5dH.png");
   background-repeat: no-repeat;
-  background-position: right;
-  background-color: #000000;
+  background-position: left;
+  background-color:rgb(0, 97, 140);
   color: #ffffff;
   margin-top: 3%;
 }
@@ -10,14 +10,17 @@
   color: #5c5c5c;
 }
 #leftside {
-  background-color: #5c5c5c;
+  background-color: rgb(220, 54, 69);
   color: white;
   text-align: center;
   font-size: 1.3em;
 }
 #rightside {
-  background-color: #e49322;
+  background-color: rgb(220, 54, 69);
   color: white;
   text-align: center;
   font-size: 1.3em;
+}
+#devoured {
+  opacity: 50%;
 }

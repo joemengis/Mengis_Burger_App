@@ -1,16 +1,16 @@
 <div class="container">
 
     <div class="jumbotron">
-        <h1>Order Your Burger </h1>
-        <p>Burger Orders for Pickup.</p>
+        <h1>Mengis Burger!</h1>
+        <p>Create Your Own Burger</p>
         <br>
-        <h2>Select a Burger or Sandwich</h2>
+        <h2>Create a Burger or Sandwich</h2>
         <panel>
             <form class="create-form">
                 <div class="form-group">
-                    <label for="newburger">Order Fresh Burger</label>
+                    <label for="newburger">Name Your Burger</label>
                     <input type="text" id="newburger" name="burger">
-                    <button type="submit" class="btn btn-success" id="addburger">
+                    <button type="submit" class="btn btn-danger" id="addburger">
                         <span class="fa fa-thumbs-up"></span>
                     </button>
                 </div>
@@ -43,15 +43,15 @@
         <div class="col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading" id="rightside"><strong>Looks like you are all done!</strong>
-                    <p>Please recycle your wrapper by hitting the recycle button</p>
+                    {{!-- <p>Please recycle your wrapper by hitting the recycle button</p> --}}
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" id="devoured">
                     <ul>
                         {{#each burgers}}
                         {{#if devoured}}
                         <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-                        <button type="button" class="trashburger btn btn-success" id="trashbutton" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"><span class="fa fa-recycle"></span></button>
+                        {{!-- <button type="button" class="trashburger btn btn-success" id="trashbutton" data-id="{{this.id}}"
+                            data-newDevoured="{{devour}}"><span class="fa fa-recycle"></span></button> --}}
                         <hr>
                         {{/if}}
                         {{/each}}

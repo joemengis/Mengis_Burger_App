@@ -7,7 +7,7 @@ $(function() {
             burger_name: $("#newburger").val().trim(),
             devoured: 0
         };
-
+        console.log(newBurger);
         $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
@@ -22,7 +22,7 @@ $(function() {
 
         let id = $(this).data("id");
         let devouredState = {devoured: 1};
-
+        console.log("burger id is: ", id);
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: devouredState
@@ -31,17 +31,15 @@ $(function() {
             location.reload();
         });
     });
-    $(".trashburger").on("click", function(event){
-        event.preventDefault();
+    // $("#trashbutton").on("click", function(event){
+    //     event.preventDefault();
+    //     console.log("recycle button pushed!");
+    //     let id = $(this).data("id");
 
-        let id = $(this).data("id");
-
-        $.ajax({
-            type: "DELETE",
-            url: "/api/burgers/" + id
-        }).then(location.reload());
-    });
-    
-
+    //     $.ajax({
+    //         type: "DELETE",
+    //         url: "/api/burgers/" + id
+    //     }).then(location.reload());
+    // });
 });
 
